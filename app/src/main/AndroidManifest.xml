@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1021006"
+    android:versionName="v1.21.06.20251212hwS"
+    android:compileSdkVersion="29"
+    android:compileSdkVersionCodename="10"
+    package="com.xuehai.launcher"
+    platformBuildVersionCode="29"
+    platformBuildVersionName="10">
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="28"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <queries>
+        <package android:name="com.xh.arespunc"/>
+        <package android:name="com.xh.ime"/>
+        <package android:name="com.xh.assist"/>
+        <package android:name="com.zhitongyun.wifimanager"/>
+        <package android:name="com.xuehai.settings"/>
+        <package android:name="com.xh.basicliteracy"/>
+        <package android:name="com.xh.zhitongyunstu"/>
+        <package android:name="com.xh.zhitongyuntch"/>
+        <package android:name="com.xh.browser"/>
+        <package android:name="com.xh.datacenter"/>
+        <package android:name="com.xh.acldstu"/>
+        <package android:name="com.xh.acldtch"/>
+        <package android:name="com.xh.feedback"/>
+        <package android:name="com.xh.taskrewardstu"/>
+        <package android:name="com.xh.taskrewardpar"/>
+        <package android:name="com.xuehai.response"/>
+        <package android:name="com.xh.areadunc"/>
+        <package android:name="com.xh.letterstu"/>
+        <package android:name="com.xh.letterpar"/>
+        <package android:name="com.xh.alstch"/>
+        <package android:name="com.xh.alsstu"/>
+        <package android:name="com.xh.aartunc"/>
+        <package android:name="com.xh.gqstu"/>
+        <package android:name="com.xh.fellowstu"/>
+        <package android:name="com.xuehai.examWeb"/>
+        <package android:name="com.xh.doquestion"/>
+        <package android:name="com.xh.dict"/>
+        <package android:name="com.xh.calendar"/>
+        <package android:name="com.xh.calculator"/>
+        <package android:name="com.xh.abrutch"/>
+        <package android:name="com.xh.abrustu"/>
+        <package android:name="com.xh.smartclassstu"/>
+        <package android:name="com.xh.asctch"/>
+        <package android:name="com.xh.ascstu"/>
+        <package android:name="com.fen.afmtch"/>
+        <package android:name="com.fen.afmstu"/>
+        <package android:name="com.xuehai.cwpmaker"/>
+        <package android:name="com.xuehai.xuehailauncher"/>
+        <package android:name="com.zhitongyun.oetteacher"/>
+        <package android:name="com.zhitongyun.oetStudent"/>
+        <package android:name="com.xh.smartclasstch"/>
+        <package android:name="com.xuehai.mockexam"/>
+        <package android:name="com.xh.smartclassroomtch"/>
+        <package android:name="com.xh.smartclassroomstu"/>
+        <package android:name="com.xh.correction"/>
+        <package android:name="com.xh.coursemaker"/>
+        <package android:name="com.xh.zhitongyuntv"/>
+        <package android:name="com.xh.blackboard"/>
+        <package android:name="com.xh.responsebrowser"/>
+        <package android:name="com.xuehai.mistakescollection"/>
+        <package android:name="com.xuehai.homeworkreport"/>
+        <package android:name="com.xh.wronganswer"/>
+        <package android:name="com.fen.answertch"/>
+        <package android:name="com.fen.answerstu"/>
+        <package android:name="com.xuehai.assistant"/>
+        <package android:name="com.xh.zhitongyunqiwang"/>
+        <package android:name="com.xuehai.cwpplayer"/>
+        <package android:name="cn.mdict"/>
+        <package android:name="com.zhitongyun.coursewarerecod"/>
+        <package android:name="com.zhitongyun.teahomewo"/>
+        <package android:name="com.xuehai.premiumcourses"/>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent>
+        <package android:name="cn.com.microtrust.firewall"/>
+        <intent>
+            <action android:name="com.huawei.hms.core.aidlservice"/>
+        </intent>
+        <intent>
+            <action android:name="com.huawei.hms.core"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="com.android.permission.GET_INSTALLED_APPS"/>
+    <uses-permission android:name="android.permission.REAL_GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.sec.MDM"/>
+    <uses-permission android:name="android.permission.sec.ENTERPRISE_DEVICE_ADMIN"/>
+    <uses-permission android:name="android.permission.sec.MDM_APP_MGMT"/>
+    <uses-permission android:name="android.permission.sec.MDM_BLUETOOTH"/>
+    <uses-permission android:name="android.permission.sec.MDM_INVENTORY"/>
+    <uses-permission android:name="android.permission.sec.MDM_EXCHANGE"/>
+    <uses-permission android:name="android.permission.sec.MDM_ROAMING"/>
+    <uses-permission android:name="android.permission.sec.MDM_WIFI"/>
+    <uses-permission android:name="android.permission.sec.MDM_SECURITY"/>
+    <uses-permission android:name="android.permission.sec.MDM_HW_CONTROL"/>
+    <uses-permission android:name="android.permission.sec.MDM_RESTRICTION"/>
+    <uses-permission android:name="android.permission.sec.MDM_LOCATION"/>
+    <uses-permission android:name="android.permission.sec.MDM_CALLING"/>
+    <uses-permission android:name="android.permission.sec.MDM_EMAIL"/>
+    <uses-permission android:name="android.permission.sec.MDM_VPN"/>
+    <uses-permission android:name="android.permission.sec.MDM_APN"/>
+    <uses-permission android:name="android.permission.sec.MDM_BROWSER_SETTINGS"/>
+    <uses-permission android:name="android.permission.sec.MDM_DATE_TIME"/>
+    <uses-permission android:name="android.permission.sec.MDM_ENTERPRISE_VPN"/>
+    <uses-permission android:name="android.permission.sec.MDM_FIREWALL"/>
+    <uses-permission android:name="android.permission.sec.MDM_PHONE_RESTRICTION"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES"/>
+    <uses-permission android:name="lenovo.permission.ota.exported"/>
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+    <uses-permission android:name="com.huawei.permission.sec.PERMISSION_MDM_SDCARD"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM"/>
+    <uses-permission android:name="com.huawei.permission.sec.SDK_LAUNCHER"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_APP_MANAGEMENT"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_NETWORK_MANAGER"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_SETTINGS_RESTRICTION"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_SDCARD"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_WIFI"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_DEVICE_MANAGER"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_USB"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_CLIPBOARD"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_CAPTURE_SCREEN"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_CAMERA"/>
+    <uses-permission android:name="com.huawei.systemmanager.permission.ACCESS_INTERFACE"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_BLUETOOTH"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_TELEPHONY"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_UPDATESTATE_MANAGER"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_LOCATION"/>
+    <uses-permission android:name="com.huawei.permission.sec.MDM_KEYGUARD"/>
+    <uses-permission android:name="android.permission.REMOVE_TASKS"/>
+    <uses-permission android:name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.DELETE_PACKAGES"/>
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_HW_CONTROL"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.CUSTOM_SETTING"/>
+    <uses-permission android:name="com.sec.enterprise.knox.permission.CUSTOM_SETTING"/>
+    <uses-permission android:name="com.sec.enterprise.knox.permission.CUSTOM_SYSTEM"/>
+    <uses-permission android:name="com.sec.enterprise.knox.permission.CUSTOM_SEALEDMODE"/>
+    <uses-permission android:name="com.sec.enterprise.permission.MDM_PROXY_ADMIN_INTERNAL"/>
+    <uses-permission android:name="android.permission.sec.MDM_AUDIT_LOG"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_KIOSK_MODE"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.ENTERPRISE_DEVICE_ADMIN"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_APP_MGMT"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_BLUETOOTH"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_INVENTORY"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_EXCHANGE"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_ROAMING"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_WIFI"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_SECURITY"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_HW_CONTROL"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_RESTRICTION"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_LOCATION"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_CALLING"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_EMAIL"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_VPN"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_APN"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_BROWSER_SETTINGS"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_DATE_TIME"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_ENTERPRISE_VPN"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_FIREWALL"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.MDM_PHONE_RESTRICTION"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_DATE_TIME"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_LOCATION"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_CUSTOM_SYSTEM"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_CUSTOM_SETTING"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_WIFI"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_CONTAINER"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_KIOSK_MODE"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_FIREWALL"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_RESTRICTION_MGMT"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_APP_MGMT"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_MULTI_USER_MGMT"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_PHONE_RESTRICTION"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_AUDIT_LOG"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_INVENTORY"/>
+    <uses-permission android:name="com.samsung.android.permission.SEM_APP_RESTRICTION"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_BROWSER_PROXY"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_DEX"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false"/>
+    <application
+        android:theme="@style/XHAppTheme"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:name="com.tinkerpatch.sdk.loader.TinkerPatchReflectApplication"
+        android:allowBackup="false"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:directBootAware="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:requestLegacyExternalStorage="true">
+        <activity
+            android:name="com.xuehai.launcher.MainActivity"
+            android:clearTaskOnLaunch="true"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan"
+            android:directBootAware="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.ASSIST"/>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.MONKEY"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/XHAppTheme"
+            android:name="com.xuehai.launcher.guide.InitGuideActivity"
+            android:launchMode="singleTask"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:directBootAware="true">
+            <intent-filter>
+                <data
+                    android:scheme="mdm"
+                    android:host="com.xuehai.mdm"
+                    android:port="8080"
+                    android:path="/init/guide"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/XHAppTheme"
+            android:name="com.xuehai.launcher.other.OtherActivity"
+            android:taskAffinity="com.xuehai.mdm.other"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"/>
+        <activity
+            android:theme="@style/Transparent"
+            android:name="com.xuehai.system.mdm.WipeDataActivity"
+            android:exported="false"
+            android:launchMode="singleTask"/>
+        <activity
+            android:theme="@style/XHAppTheme"
+            android:name="com.xuehai.launcher.safe.SafeActivity"
+            android:taskAffinity="com.xuehai.mdm.safe"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:directBootAware="true">
+            <intent-filter>
+                <data
+                    android:scheme="mdm"
+                    android:host="com.xuehai.mdm"
+                    android:port="8080"
+                    android:path="/safe"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/XHAppTheme"
+            android:name="com.xuehai.launcher.device.DeviceResetActivity"
+            android:taskAffinity="com.xuehai.mdm.reset"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"/>
+        <activity
+            android:theme="@style/XHAppTheme"
+            android:name="com.xuehai.launcher.device.DeviceInfoActivity"
+            android:screenOrientation="portrait"/>
+        <service
+            android:name="com.xuehai.system.mdm.MdmService"
+            android:directBootAware="true">
+            <intent-filter>
+                <action android:name="com.xuehai.system.mdm.action_aidl"/>
+            </intent-filter>
+        </service>
+        <receiver
+            android:name="com.xuehai.launcher.receiver.BootReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:directBootAware="true">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_UNLOCKED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
+        <activity
+            android:theme="@style/StartUpTheme"
+            android:name="com.xuehai.launcher.library.welcome.ui.impl.WelcomeActivity"
+            android:screenOrientation="fullSensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/StartUpTheme"
+            android:name="com.xuehai.launcher.SchoolCodeActivity"
+            android:screenOrientation="fullSensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/XHAppTheme"
+            android:name="com.xuehai.launcher.library.login.ui.impl.OutLoginActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="fullSensor"/>
+        <activity
+            android:name="com.xh.open.agent.AgentActivity"
+            android:exported="true"
+            android:process=":openSdk"
+            android:launchMode="singleTask"/>
+        <provider
+            android:name="com.xuehai.provider.core.XHContentProvider"
+            android:exported="true"
+            android:process=":transProvider"
+            android:authorities="com.xuehai.provider"/>
+        <provider
+            android:name="com.xuehai.provider.core.DefaultContentProvider"
+            android:exported="false"
+            android:authorities="com.xuehai.provider.default"/>
+        <activity
+            android:name="com.xuehai.launcher.common.util.app.StartApp"
+            android:launchMode="singleTask"/>
+        <service
+            android:label="@string/accessibility_service_label"
+            android:name="com.xuehai.launcher.common.service.MdmAccessibilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config"/>
+        </service>
+        <receiver
+            android:label="@string/app_name"
+            android:name="com.xh.common.lib.sdk.samsung.AdminReceiver"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:authorities="com.xuehai.launcher.mdm.fileProvider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+        <service
+            android:name="com.xuehai.system.lenovo.csdk.tb223fc.Lenovo223FCAccessibilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_config"/>
+        </service>
+        <receiver
+            android:name="com.xuehai.system.huawei_c5.receiver.HuaweiHemInstallMdmPackageReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.huawei.intent.action.InstallMdmPackage"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xuehai.system.samsung.knox.KnoxReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="edm.intent.action.license.status"/>
+                <action android:name="edm.intent.action.knox_license.status"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xuehai.system.samsung.knox.v3.KnoxV3Receiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.samsung.android.knox.intent.action.KNOX_LICENSE_STATUS"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.xuehai.system.samsung.knox.v3.receiver.MonitoringReceiverSamsungV3"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.samsung.android.knox.intent.action.APPLICATION_FOCUS_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.xh.xhcore.common.service.LogcatService"/>
+        <service
+            android:name="com.xh.xhcore.common.hotfix.tinker.service.SampleResultService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false"/>
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:label="@string/xhcore_apm"
+            android:name="com.xh.xhcore.common.matrix.issue.IssuesListActivity"
+            android:taskAffinity="xhcore.apm.com.xuehai.launcher"
+            android:launchMode="singleTask"/>
+        <activity
+            android:theme="@style/zxing_CaptureTheme"
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:stateNotNeeded="true"
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:theme="@style/EasyPermissions.Transparent"
+            android:label=""
+            android:name="pub.devrel.easypermissions.AppSettingsDialogHolderActivity"
+            android:exported="false"/>
+        <service
+            android:name="com.kwai.koom.javaoom.analysis.HeapAnalyzeService"
+            android:process=":heap_analysis"/>
+        <activity android:name="com.kwai.koom.javaoom.test.leaked.ActivityLeakMaker.LeakedActivity"/>
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:exported="false"
+            android:multiprocess="true"
+            android:authorities="com.xuehai.launcher.lifecycle-process"/>
+        <service
+            android:name="com.tencent.tinker.lib.service.TinkerPatchForeService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":patch"/>
+        <service
+            android:name="com.tencent.tinker.lib.service.TinkerPatchService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false"
+            android:process=":patch"/>
+        <service
+            android:name="com.tencent.tinker.lib.service.TinkerPatchService.InnerService"
+            android:exported="false"
+            android:process=":patch"/>
+        <service
+            android:name="com.tencent.tinker.lib.service.DefaultTinkerResultService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_00"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_01"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_02"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_03"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_04"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_05"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_06"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_07"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_08"/>
+        <activity android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_09"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_00_T"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_01_T"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.STDStub_02_T"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_00"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_01"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_02"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_03"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_04"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_05"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_06"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_07"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_08"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_09"
+            android:launchMode="singleTop"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_00_T"
+            android:launchMode="singleTop"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_01_T"
+            android:launchMode="singleTop"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTStub_02_T"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_00"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_01"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_02"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_03"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_04"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_05"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_06"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_07"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_08"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_09"
+            android:launchMode="singleTask"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_00_T"
+            android:launchMode="singleTask"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_01_T"
+            android:launchMode="singleTask"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SGTKStub_02_T"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_00"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_01"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_02"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_03"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_04"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_05"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_06"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_07"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_08"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_09"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_00_T"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_01_T"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.tinker.loader.hotplug.ActivityStubs.SIStub_02_T"
+            android:launchMode="singleInstance"/>
+        <meta-data
+            android:name="tinker_version"
+            android:value="1.9.14.7"/>
+        <provider
+            android:name="com.analysys.database.AnsContentProvider"
+            android:enabled="true"
+            android:exported="false"
+            android:authorities="com.xuehai.launcher.AnsContentProvider"/>
+        <meta-data
+            android:name="com.huawei.hms.client.service.name:base"
+            android:value="base:6.4.0.302"/>
+        <meta-data
+            android:name="com.huawei.hms.min_api_level:base:hmscore"
+            android:value="1"/>
+        <meta-data
+            android:name="availableLoaded"
+            android:value="yes"/>
+        <activity
+            android:theme="@style/Base_Translucent"
+            android:name="com.huawei.hms.activity.BridgeActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:screenOrientation="behind"
+            android:configChanges="fontScale|layoutDirection|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|locale"
+            android:hardwareAccelerated="true">
+            <meta-data
+                android:name="hwc-theme"
+                android:value="androidhwext:style/Theme.Emui.Translucent"/>
+        </activity>
+        <activity
+            android:name="com.huawei.hms.activity.EnableServiceActivity"
+            android:exported="false"
+            android:configChanges="smallestScreenSize|screenSize|screenLayout|orientation|keyboardHidden"/>
+        <provider
+            android:name="com.huawei.agconnect.core.provider.AGConnectInitializeProvider"
+            android:exported="false"
+            android:authorities="com.xuehai.launcher.AGCInitializeProvider"/>
+        <service
+            android:name="com.huawei.agconnect.core.ServiceDiscovery"
+            android:exported="false"/>
+        <meta-data
+            android:name="TINKER_PATCH_APPLICATION"
+            android:value="com.xuehai.launcher.App"/>
+        <meta-data
+            android:name="TINKER_PATCH_APP_KEY"
+            android:value="tinker_patch_CA106002"/>
+        <meta-data
+            android:name="TINKER_PATCH_APP_VERSION"
+            android:value="tinker_patch_v1.21.06.20251212hwS_1021006"/>
+        <meta-data
+            android:name="TINKER_ID"
+            android:value="tinker_id_v1.21.06.20251212hwS_1021006"/>
+    </application>
+</manifest>

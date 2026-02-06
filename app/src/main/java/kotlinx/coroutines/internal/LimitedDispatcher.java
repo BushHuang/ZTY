@@ -1,0 +1,117 @@
+package kotlinx.coroutines.internal;
+
+import kotlin.Deprecated;
+import kotlin.DeprecationLevel;
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.CoroutineContext;
+import kotlin.coroutines.EmptyCoroutineContext;
+import kotlin.jvm.functions.Function0;
+import kotlinx.coroutines.CancellableContinuation;
+import kotlinx.coroutines.CoroutineDispatcher;
+import kotlinx.coroutines.CoroutineExceptionHandlerKt;
+import kotlinx.coroutines.DefaultExecutorKt;
+import kotlinx.coroutines.Delay;
+import kotlinx.coroutines.DisposableHandle;
+
+@Metadata(d1 = {"\u0000\\\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0000\u0018\u00002\u00020\u00012\u00060\u0002j\u0002`\u00032\u00020\u0004B\u0015\u0012\u0006\u0010\u0005\u001a\u00020\u0001\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0002\u0010\bJ\u0014\u0010\f\u001a\u00020\r2\n\u0010\u000e\u001a\u00060\u0002j\u0002`\u0003H\u0002J\u0019\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0097Aø\u0001\u0000¢\u0006\u0002\u0010\u0013J\u001c\u0010\u0014\u001a\u00020\u00102\u0006\u0010\u0015\u001a\u00020\u00162\n\u0010\u000e\u001a\u00060\u0002j\u0002`\u0003H\u0016J#\u0010\u0017\u001a\u00020\u00102\n\u0010\u000e\u001a\u00060\u0002j\u0002`\u00032\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00100\u0018H\u0082\bJ\u001c\u0010\u0019\u001a\u00020\u00102\u0006\u0010\u0015\u001a\u00020\u00162\n\u0010\u000e\u001a\u00060\u0002j\u0002`\u0003H\u0017J%\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u00122\n\u0010\u000e\u001a\u00060\u0002j\u0002`\u00032\u0006\u0010\u0015\u001a\u00020\u0016H\u0096\u0001J\u0010\u0010\u001d\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u0007H\u0017J\b\u0010\u001e\u001a\u00020\u0010H\u0016J\u001f\u0010\u001f\u001a\u00020\u00102\u0006\u0010\u001c\u001a\u00020\u00122\f\u0010 \u001a\b\u0012\u0004\u0012\u00020\u00100!H\u0096\u0001J\b\u0010\"\u001a\u00020\rH\u0002R\u000e\u0010\u0005\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0018\u0010\t\u001a\f\u0012\b\u0012\u00060\u0002j\u0002`\u00030\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000\u0082\u0002\u0004\n\u0002\b\u0019¨\u0006#"}, d2 = {"Lkotlinx/coroutines/internal/LimitedDispatcher;", "Lkotlinx/coroutines/CoroutineDispatcher;", "Ljava/lang/Runnable;", "Lkotlinx/coroutines/Runnable;", "Lkotlinx/coroutines/Delay;", "dispatcher", "parallelism", "", "(Lkotlinx/coroutines/CoroutineDispatcher;I)V", "queue", "Lkotlinx/coroutines/internal/LockFreeTaskQueue;", "runningWorkers", "addAndTryDispatching", "", "block", "delay", "", "time", "", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dispatch", "context", "Lkotlin/coroutines/CoroutineContext;", "dispatchInternal", "Lkotlin/Function0;", "dispatchYield", "invokeOnTimeout", "Lkotlinx/coroutines/DisposableHandle;", "timeMillis", "limitedParallelism", "run", "scheduleResumeAfterDelay", "continuation", "Lkotlinx/coroutines/CancellableContinuation;", "tryAllocateWorker", "kotlinx-coroutines-core"}, k = 1, mv = {1, 6, 0}, xi = 48)
+public final class LimitedDispatcher extends CoroutineDispatcher implements Runnable, Delay {
+    private final Delay $$delegate_0;
+    private final CoroutineDispatcher dispatcher;
+    private final int parallelism;
+    private final LockFreeTaskQueue<Runnable> queue;
+    private volatile int runningWorkers;
+
+    public LimitedDispatcher(CoroutineDispatcher coroutineDispatcher, int i) {
+        this.dispatcher = coroutineDispatcher;
+        this.parallelism = i;
+        Delay delay = coroutineDispatcher instanceof Delay ? (Delay) coroutineDispatcher : null;
+        this.$$delegate_0 = delay == null ? DefaultExecutorKt.getDefaultDelay() : delay;
+        this.queue = new LockFreeTaskQueue<>(false);
+    }
+
+    private final boolean addAndTryDispatching(Runnable block) {
+        this.queue.addLast(block);
+        return this.runningWorkers >= this.parallelism;
+    }
+
+    private final void dispatchInternal(Runnable block, Function0<Unit> dispatch) {
+        if (!addAndTryDispatching(block) && tryAllocateWorker()) {
+            dispatch.invoke();
+        }
+    }
+
+    private final boolean tryAllocateWorker() {
+        synchronized (this) {
+            if (this.runningWorkers >= this.parallelism) {
+                return false;
+            }
+            this.runningWorkers++;
+            return true;
+        }
+    }
+
+    @Override
+    @Deprecated(level = DeprecationLevel.ERROR, message = "Deprecated without replacement as an internal method never intended for public use")
+    public Object delay(long j, Continuation<? super Unit> continuation) {
+        return this.$$delegate_0.delay(j, continuation);
+    }
+
+    @Override
+    public void mo1709dispatch(CoroutineContext context, Runnable block) {
+        if (!addAndTryDispatching(block) && tryAllocateWorker()) {
+            this.dispatcher.mo1709dispatch(this, this);
+        }
+    }
+
+    @Override
+    public void dispatchYield(CoroutineContext context, Runnable block) {
+        if (!addAndTryDispatching(block) && tryAllocateWorker()) {
+            this.dispatcher.dispatchYield(this, this);
+        }
+    }
+
+    @Override
+    public DisposableHandle invokeOnTimeout(long timeMillis, Runnable block, CoroutineContext context) {
+        return this.$$delegate_0.invokeOnTimeout(timeMillis, block, context);
+    }
+
+    @Override
+    public CoroutineDispatcher limitedParallelism(int parallelism) {
+        LimitedDispatcherKt.checkParallelism(parallelism);
+        return parallelism >= this.parallelism ? this : super.limitedParallelism(parallelism);
+    }
+
+    @Override
+    public void run() {
+        LimitedDispatcher limitedDispatcher;
+        while (true) {
+            int i = 0;
+            while (true) {
+                Runnable runnableRemoveFirstOrNull = this.queue.removeFirstOrNull();
+                if (runnableRemoveFirstOrNull == null) {
+                    break;
+                }
+                try {
+                    runnableRemoveFirstOrNull.run();
+                } catch (Throwable th) {
+                    CoroutineExceptionHandlerKt.handleCoroutineException(EmptyCoroutineContext.INSTANCE, th);
+                }
+                i++;
+                if (i >= 16) {
+                    LimitedDispatcher limitedDispatcher2 = this;
+                    if (this.dispatcher.isDispatchNeeded(limitedDispatcher2)) {
+                        this.dispatcher.mo1709dispatch(limitedDispatcher2, this);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
+    public void mo1710scheduleResumeAfterDelay(long timeMillis, CancellableContinuation<? super Unit> continuation) {
+        this.$$delegate_0.mo1710scheduleResumeAfterDelay(timeMillis, continuation);
+    }
+}

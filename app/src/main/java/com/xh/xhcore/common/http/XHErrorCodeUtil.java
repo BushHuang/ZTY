@@ -1,0 +1,163 @@
+package com.xh.xhcore.common.http;
+
+import android.text.TextUtils;
+import java.util.HashMap;
+
+public class XHErrorCodeUtil {
+    public static final int BASE_CODE = 107000000;
+    public static HashMap<Integer, String> CODE_DESCRIPTION_MAP = new HashMap<Integer, String>() {
+        {
+            put(107000100, "Continue");
+            put(107000101, "Switching Protocols");
+            put(107000200, "OK");
+            put(107000201, "Created");
+            put(107000202, "Accepted");
+            put(107000203, "Non-Authoritative Information");
+            put(107000204, "No Content");
+            put(107000205, "Reset Content");
+            put(107000206, "Partial Content");
+            put(107000300, "Multiple Choices");
+            put(107000301, "Moved Permanently");
+            put(107000302, "Found");
+            put(107000303, "See Other");
+            put(107000304, "Not Modified");
+            put(107000305, "Use Proxy");
+            put(107000306, "Unused Code");
+            put(107000307, "Temporary Redirect");
+            put(107000400, "Bad Request");
+            put(107000402, "Payment Required");
+            put(107000407, "Proxy Authentication Required");
+            put(107000409, "Conflict");
+            put(107000410, "Gone");
+            put(107000411, "Length Required");
+            put(107000412, "Precondition Failed");
+            put(107000413, "Request Entity Too Large");
+            put(107000414, "Request-URI Too Long");
+            put(107000416, "Request Range Not Satisfialbe");
+            put(107000417, "Expectation Failed");
+            put(107000501, "Not Implemented");
+            put(107000006, "域名解析失败！");
+            put(107000007, "网络不通，请检查网络！");
+            put(107000028, "网络请求超时！请重试！");
+            put(107000056, "网络不通，请检查网络！");
+            put(107001012, "无法连接到服务器！但百度可以连接");
+            put(107001015, "请求超时！但百度可以连接");
+            put(107001016, "请求url格式错误");
+            put(107001017, "请求url为null或empty");
+            put(107000401, "请重新登录！");
+            put(107000403, "权限不足，拒绝访问！");
+            put(107000404, "接口或资源不存在！");
+            put(107000405, "请求类型错误！");
+            put(107000406, "请求的内容不符合要求！");
+            put(107000408, "请求服务器超时！");
+            put(107000415, "服务器不支持返回该数据类型！");
+            put(107000429, "您发送请求太频繁，请休息一会儿！");
+            put(107000500, "服务器开小差了！");
+            put(107000502, "不好了，服务器罢工了！");
+            put(107000503, "该服务暂不可用！");
+            put(107000504, "服务器繁忙，请稍后再试！");
+            put(107000509, "下载人数太多,排队中,请稍后");
+            put(107001014, "上传文件不存在");
+            put(107001200, "超时之后连接百度失败");
+            put(107001201, "超时之后连接服务器失败");
+            put(107001202, "未知的IO错误");
+            put(107001203, "网络超时，外网ping不通!");
+            put(107001204, "数据解析异常");
+            put(107001205, "数据解析后为null");
+            put(107001206, "微服务未获取到ip");
+            put(107001300, "发生EOFException");
+            put(107001301, "用户取消网络请求完成");
+            put(107002001, "文件下载不完整！请重新下载！");
+            put(107002002, "文件服务器错误！");
+            put(107002502, "该图片可能违规");
+            put(107002003, "私有文件换取临时地址为空");
+            put(107002004, "批量下载存在失败文件");
+            put(107003002, "阿里云路径信息为空");
+            put(107003003, "阿里云上传aksk未配置");
+            put(107003004, "上传时本地文件路径为空");
+            put(107003005, "多文件上传，本地文件列表长度为0");
+            put(107003006, "阿里云直传失败，无异常回调");
+            put(107003100, "上传响应解析状态失败");
+            put(107003101, "服务器返回数据格式不正确");
+            put(107003102, "文件路径格式不正确");
+            put(107004000, "网络请求超时！请重试！");
+            put(107004001, "无法连接到服务器！");
+            put(-108000001, "没有网络连接，请连接网络！");
+        }
+    };
+    public static final int EOF_EXCEPTION_BASE = 107001300;
+    public static final int FS_FAIL_CODE = 2000;
+    public static final int FS_IMAGE_AUDIT_FAIL_CODE = 2500;
+    public static final int HTTP_CODE_107000006 = 107000006;
+    public static final int HTTP_CODE_107000007 = 107000007;
+    public static final int HTTP_CODE_107000028 = 107000028;
+    public static final int HTTP_CODE_107000056 = 107000056;
+    public static final int HTTP_CODE_107000400 = 107000400;
+    public static final int HTTP_CODE_107000401 = 107000401;
+    public static final int HTTP_CODE_107000403 = 107000403;
+    public static final int HTTP_CODE_107000404 = 107000404;
+    public static final int HTTP_CODE_107000405 = 107000405;
+    public static final int HTTP_CODE_107000406 = 107000406;
+    public static final int HTTP_CODE_107000408 = 107000408;
+    public static final int HTTP_CODE_107000415 = 107000415;
+    public static final int HTTP_CODE_107000429 = 107000429;
+    public static final int HTTP_CODE_107000500 = 107000500;
+    public static final int HTTP_CODE_107000502 = 107000502;
+    public static final int HTTP_CODE_107000503 = 107000503;
+    public static final int HTTP_CODE_107000504 = 107000504;
+    public static final int HTTP_CODE_107000509 = 107000509;
+    public static final int HTTP_CODE_107001012 = 107001012;
+    public static final int HTTP_CODE_107001015 = 107001015;
+    public static final int HTTP_CODE_107002001 = 107002001;
+
+    @Deprecated
+    public static final int HTTP_CODE_107002002 = 107002002;
+    public static final int HTTP_CODE_107004000 = 107004000;
+    public static final int HTTP_CODE_107004001 = 107004001;
+    public static final int HTTP_CODE_NO_NET = -108000001;
+    public static final int HTTP_CODE_XH_FILE_NOT_EXIST = 107001014;
+    public static final int UNKNOWN_IO_EXCEPTION = 107001202;
+    public static final int USER_CANCEL_COMPLETE = 107001301;
+    public static final int XH_FILE_NOT_COMPLETE = 107002001;
+    public static final int XH_FS_EXCHANGE_TEMP_URL_EMPTY = 107002003;
+    public static final int XH_FS_FAIL = 107002002;
+    public static final int XH_FS_IMAGE_AUDIT_FAIL = 107002502;
+    public static final int XH_FS_MULTI_DOWNLOAD_EXIST_FAIL_FILE = 107002004;
+    public static final int XH_FS_SUCCESS = 1000;
+    public static final int XH_MICRO_SERVER_NO_IP = 107001206;
+    public static final int XH_PARSE_RESULT_NULL_FAIL = 107001205;
+    public static final int XH_PARSE_TYPE_FAIL = 107001204;
+    public static final int XH_PING_BAIDU_EXCEPTION = 107001200;
+    public static final int XH_PING_BAIDU_FAIL = 107001203;
+    public static final int XH_PING_SERVER_FAIL = 107001201;
+    public static final int XH_REQUEST_URL_EMPTY = 107001016;
+    public static final int XH_REQUEST_URL_NULL = 107001017;
+    public static final int XH_UPLOAD_ALIYUN_AK_SK_EMPTY = 107003003;
+    public static final int XH_UPLOAD_ALIYUN_OSS_FAIL_CLIENT = 107003000;
+    public static final int XH_UPLOAD_ALIYUN_OSS_FAIL_NO_EXCEPTION = 107003006;
+    public static final int XH_UPLOAD_ALIYUN_OSS_FAIL_SERVER = 107003001;
+    public static final int XH_UPLOAD_ALIYUN_PATH_EMPTY = 107003002;
+    public static final int XH_UPLOAD_DOMAIN_NOT_FOUND = 107005002;
+    public static final int XH_UPLOAD_FILE_NOT_FOUND = 107005004;
+    public static final int XH_UPLOAD_FILE_PATH_EMPTY = 107005003;
+    public static final int XH_UPLOAD_FILE_PATH_ERROR = 107003102;
+    public static final int XH_UPLOAD_LOCAL_PATHS_EMPTY = 107003005;
+    public static final int XH_UPLOAD_LOCAL_PATH_EMPTY = 107003004;
+    public static final int XH_UPLOAD_OBS_EXCEPTION = 107005006;
+    public static final int XH_UPLOAD_OBS_THREAD_EXCEPTION = 107005005;
+    public static final int XH_UPLOAD_OSS_EXCEPTION = 107005007;
+    public static final int XH_UPLOAD_OS_MD5_EXCEPTION = 107005008;
+    public static final int XH_UPLOAD_OS_TYPE_ERROR = 107005001;
+    public static final int XH_UPLOAD_RESPONSE_BEAN_PARSE_ERROR = 107003101;
+    public static final int XH_UPLOAD_RES_BEAN_STATUS_FAILED = 107003100;
+    public static final int XH_XUEHAI_ADDRES_TIMEOUT = 107001015;
+
+    public static String getErrorMsgInfo(int i) {
+        String str = CODE_DESCRIPTION_MAP.get(Integer.valueOf(i));
+        return !TextUtils.isEmpty(str) ? str : "未定义错误描述";
+    }
+
+    public static String getErrorMsgInfo(int i, String str) {
+        return CODE_DESCRIPTION_MAP.containsKey(Integer.valueOf(i)) ? CODE_DESCRIPTION_MAP.get(Integer.valueOf(i)) : str;
+    }
+}

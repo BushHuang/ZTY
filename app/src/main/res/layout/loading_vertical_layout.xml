@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xuehai.launcher.common.widget.WidthFitSquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/vertical_loading_img"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginBottom="@dimen/dp_6"
+        android:src="@drawable/vector_loading"
+        android:contentDescription="@null"/>
+    <TextView
+        android:textSize="@dimen/sp_18"
+        android:textColor="#999999"
+        android:gravity="center"
+        android:id="@+id/vertical_loading_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"/>
+</com.xuehai.launcher.common.widget.WidthFitSquareLayout>

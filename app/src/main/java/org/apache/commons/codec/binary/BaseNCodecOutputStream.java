@@ -1,0 +1,81 @@
+package org.apache.commons.codec.binary;
+
+import java.io.FilterOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import org.apache.commons.codec.binary.BaseNCodec;
+
+public class BaseNCodecOutputStream extends FilterOutputStream {
+    private final BaseNCodec baseNCodec;
+    private final BaseNCodec.Context context;
+    private final boolean doEncode;
+    private final byte[] singleByte;
+
+    public BaseNCodecOutputStream(OutputStream outputStream, BaseNCodec baseNCodec, boolean z) {
+        super(outputStream);
+        this.singleByte = new byte[1];
+        this.context = new BaseNCodec.Context();
+        this.baseNCodec = baseNCodec;
+        this.doEncode = z;
+    }
+
+    private void flush(boolean z) throws IOException {
+        byte[] bArr;
+        int results;
+        int iAvailable = this.baseNCodec.available(this.context);
+        if (iAvailable > 0 && (results = this.baseNCodec.readResults((bArr = new byte[iAvailable]), 0, iAvailable, this.context)) > 0) {
+            this.out.write(bArr, 0, results);
+        }
+        if (z) {
+            this.out.flush();
+        }
+    }
+
+    @Override
+    public void close() throws IOException {
+        eof();
+        flush();
+        this.out.close();
+    }
+
+    public void eof() throws IOException {
+        if (this.doEncode) {
+            this.baseNCodec.encode(this.singleByte, 0, -1, this.context);
+        } else {
+            this.baseNCodec.decode(this.singleByte, 0, -1, this.context);
+        }
+    }
+
+    @Override
+    public void flush() throws IOException {
+        flush(true);
+    }
+
+    @Override
+    public void write(int i) throws IOException {
+        byte[] bArr = this.singleByte;
+        bArr[0] = (byte) i;
+        write(bArr, 0, 1);
+    }
+
+    @Override
+    public void write(byte[] bArr, int i, int i2) throws IOException {
+        if (bArr == null) {
+            throw null;
+        }
+        if (i < 0 || i2 < 0) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (i > bArr.length || i + i2 > bArr.length) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (i2 > 0) {
+            if (this.doEncode) {
+                this.baseNCodec.encode(bArr, i, i2, this.context);
+            } else {
+                this.baseNCodec.decode(bArr, i, i2, this.context);
+            }
+            flush(false);
+        }
+    }
+}

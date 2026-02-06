@@ -1,0 +1,36 @@
+package com.huawei.hms.hatool;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public final class e0 {
+    public static e0 b;
+
+    public volatile Map<String, f0> f294a = new HashMap();
+
+    public static e0 a() {
+        if (b == null) {
+            b();
+        }
+        return b;
+    }
+
+    public static synchronized void b() {
+        if (b == null) {
+            b = new e0();
+        }
+    }
+
+    public final f0 a(String str) {
+        if (!this.f294a.containsKey(str)) {
+            this.f294a.put(str, new f0());
+        }
+        return this.f294a.get(str);
+    }
+
+    public f0 a(String str, long j) {
+        f0 f0VarA = a(str);
+        f0VarA.a(j);
+        return f0VarA;
+    }
+}

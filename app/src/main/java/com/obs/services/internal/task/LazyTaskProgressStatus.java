@@ -1,0 +1,44 @@
+package com.obs.services.internal.task;
+
+public class LazyTaskProgressStatus extends DefaultTaskProgressStatus {
+    @Override
+    public void execTaskIncrement() {
+    }
+
+    @Override
+    public void failTaskIncrement() {
+    }
+
+    @Override
+    public int getExecPercentage() {
+        return -1;
+    }
+
+    @Override
+    public int getExecTaskNum() {
+        return -1;
+    }
+
+    @Override
+    public int getFailTaskNum() {
+        return -1;
+    }
+
+    @Override
+    public int getSucceedTaskNum() {
+        return -1;
+    }
+
+    @Override
+    public int getTotalTaskNum() {
+        return -1;
+    }
+
+    @Override
+    public void setTotalTaskNum(int i) {
+    }
+
+    @Override
+    public void succeedTaskIncrement() {
+    }
+}

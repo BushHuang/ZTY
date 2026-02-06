@@ -1,0 +1,73 @@
+package io.reactivex.internal.operators.maybe;
+
+import io.reactivex.MaybeObserver;
+import io.reactivex.MaybeSource;
+import io.reactivex.Single;
+import io.reactivex.SingleObserver;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.internal.disposables.DisposableHelper;
+import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
+
+public final class MaybeCount<T> extends Single<Long> implements HasUpstreamMaybeSource<T> {
+    final MaybeSource<T> source;
+
+    static final class CountMaybeObserver implements MaybeObserver<Object>, Disposable {
+        final SingleObserver<? super Long> actual;
+        Disposable d;
+
+        CountMaybeObserver(SingleObserver<? super Long> singleObserver) {
+            this.actual = singleObserver;
+        }
+
+        @Override
+        public void dispose() {
+            this.d.dispose();
+            this.d = DisposableHelper.DISPOSED;
+        }
+
+        @Override
+        public boolean isDisposed() {
+            return this.d.isDisposed();
+        }
+
+        @Override
+        public void onComplete() {
+            this.d = DisposableHelper.DISPOSED;
+            this.actual.onSuccess(0L);
+        }
+
+        @Override
+        public void onError(Throwable th) {
+            this.d = DisposableHelper.DISPOSED;
+            this.actual.onError(th);
+        }
+
+        @Override
+        public void onSubscribe(Disposable disposable) {
+            if (DisposableHelper.validate(this.d, disposable)) {
+                this.d = disposable;
+                this.actual.onSubscribe(this);
+            }
+        }
+
+        @Override
+        public void onSuccess(Object obj) {
+            this.d = DisposableHelper.DISPOSED;
+            this.actual.onSuccess(1L);
+        }
+    }
+
+    public MaybeCount(MaybeSource<T> maybeSource) {
+        this.source = maybeSource;
+    }
+
+    @Override
+    public MaybeSource<T> source() {
+        return this.source;
+    }
+
+    @Override
+    protected void subscribeActual(SingleObserver<? super Long> singleObserver) {
+        this.source.subscribe(new CountMaybeObserver(singleObserver));
+    }
+}

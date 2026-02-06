@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abc_action_bar_home_description">ਹੋਮ \'ਤੇ ਜਾਓ</string>
+    <string name="abc_action_bar_up_description">ਉੱਪਰ ਜਾਓ</string>
+    <string name="abc_action_menu_overflow_description">ਹੋਰ ਵਿਕਲਪ</string>
+    <string name="abc_action_mode_done">ਹੋ ਗਿਆ</string>
+    <string name="abc_activity_chooser_view_see_all">ਸਭ ਦੇਖੋ</string>
+    <string name="abc_activitychooserview_choose_application">ਇੱਕ ਐਪ ਚੁਣੋ</string>
+    <string name="abc_capital_off">ਬੰਦ</string>
+    <string name="abc_capital_on">ਚਾਲੂ</string>
+    <string name="abc_menu_alt_shortcut_label">Alt+</string>
+    <string name="abc_menu_ctrl_shortcut_label">Ctrl+</string>
+    <string name="abc_menu_delete_shortcut_label">ਮਿਟਾਓ</string>
+    <string name="abc_menu_enter_shortcut_label">enter</string>
+    <string name="abc_menu_function_shortcut_label">Function+</string>
+    <string name="abc_menu_meta_shortcut_label">Meta+</string>
+    <string name="abc_menu_shift_shortcut_label">Shift+</string>
+    <string name="abc_menu_space_shortcut_label">space</string>
+    <string name="abc_menu_sym_shortcut_label">Sym+</string>
+    <string name="abc_prepend_shortcut_label">Menu+</string>
+    <string name="abc_search_hint">ਖੋਜ…</string>
+    <string name="abc_searchview_description_clear">ਪੁੱਛਗਿੱਛ ਕਲੀਅਰ ਕਰੋ</string>
+    <string name="abc_searchview_description_query">ਖੋਜ ਪੁੱਛਗਿੱਛ</string>
+    <string name="abc_searchview_description_search">ਖੋਜ</string>
+    <string name="abc_searchview_description_submit">ਪੁੱਛਗਿੱਛ ਸਪੁਰਦ ਕਰੋ</string>
+    <string name="abc_searchview_description_voice">ਅਵਾਜ਼ੀ ਖੋਜ</string>
+    <string name="abc_shareactionprovider_share_with">ਇਸ ਨਾਲ ਸਾਂਝਾ ਕਰੋ</string>
+    <string name="abc_shareactionprovider_share_with_application">%s ਨਾਲ ਸਾਂਝਾ ਕਰੋ</string>
+    <string name="abc_toolbar_collapse_description">ਸਮੇਟੋ</string>
+    <string name="hms_apk_not_installed_hints">%1$s ਵਿੱਚ ਕੁਝ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਸ਼ਾਇਦ HMS Core ਤੋਂ ਬਿਨਾਂ ਠੀਕ ਢੰਗ ਨਾਲ ਕੰਮ ਨਾ ਕਰਨ, ਜੋ ਤੁਹਾਡੇ ਡਿਵਾਈਸ \'ਤੇ ਇੰਸਟਾਲ ਨਹੀਂ ਹੈ।</string>
+    <string name="hms_bindfaildlg_message">%1$s HMS Core ਦੀ ਵਰਤੋਂ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਆਪਟੀਮਾਈਜ਼ਰ (ਫ਼ੋਨ ਮੈਨੇਜਰ) ਨੂੰ ਲਾਂਚ ਕਰੋ ਜਾਂ ਸੈਟਿੰਗਾਂ ’ਤੇ ਜਾਓ, %2$s ਲਈ ਸਾਰੀਆਂ ਇਜਾਜ਼ਤਾਂ ਨੂੰ ਸਮਰੱਥ ਕਰੋ (ਜਿਸ ਵਿੱਚ ਸਵੈ-ਲਾਂਚ ਅਤੇ ਸੈਕੰਡਰੀ ਲਾਂਚ ਸ਼ਾਮਲ ਹੈ), ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
+    <string name="hms_confirm">ਠੀਕ</string>
+    <string name="hms_is_spoof">ਇੰਝ ਜਾਪਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਡਿਵਾਈਸ \'ਤੇ HMS Core (%1$s) ਦਾ ਅਣਅਧਿਕਾਰਤ ਸੰਸਕਰਣ ਇੰਸਟਾਲ ਕੀਤਾ ਹੋਇਆ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸੈਟਿੰਗਾਂ ਵਿੱਚੋਂ HMS Core ਨੂੰ ਇੰਸਟਾਲ ਕਰੋ ਅਤੇ ਅਧਿਕਾਰਤ ਸੰਸਕਰਣ ਇੰਸਟਾਲ ਕਰਨ ਲਈ ਇਸ ਐਪ \'ਤੇ ਵਾਪਸ ਜਾਓ।</string>
+    <string name="hms_spoof_hints">ਨੋਟ</string>
+    <string name="search_menu_title">ਖੋਜ</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap android:src="@mipmap/splash_bg"/>
+    </item>
+    <item android:gravity="center">
+        <bitmap android:src="@mipmap/ic_start_xyw_xyd"/>
+    </item>
+    <item
+        android:gravity="bottom|center_horizontal"
+        android:bottom="@dimen/dp_48">
+        <bitmap android:src="@mipmap/ic_nation_school_start_logo"/>
+    </item>
+</layer-list>
